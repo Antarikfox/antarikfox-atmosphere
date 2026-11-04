@@ -1,0 +1,22 @@
+name: Checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Build
+        run: python3 scripts/build.py
+      - name: Validate package and generated files
+        run: python3 scripts/validate.py
+      - name: Test configuration and historical data handling
+        run: node --test tests/*.test.cjs
+      - name: Check committed build is current
+        run: git diff --exit-code -- dist downloads docs/index.html

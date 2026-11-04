@@ -1,0 +1,23 @@
+name: Ошибка карточки
+description: Сообщить о проблеме Atmosphere
+title: "[Bug] "
+body:
+  - type: input
+    id: versions
+    attributes:
+      label: Версии
+      description: Home Assistant, Atmosphere, браузер и устройство
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Шаги воспроизведения
+      description: Что нажал, что ожидал и что произошло?
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: Обезличенный пример конфигурации
+      render: yaml

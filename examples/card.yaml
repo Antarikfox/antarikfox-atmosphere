@@ -1,0 +1,13 @@
+type: custom:antarikfox-atmosphere
+room: Моя комната
+temperature_entity: sensor.room_temperature
+humidity_entity: sensor.room_humidity
+instance_id: atmosphere_room
+background_mode: theme
+background_opacity: 100
+background_blur: 0
+animation: true
+sparks: true
+grid_options:
+  columns: 12
+  rows: auto
